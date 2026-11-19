@@ -1,7 +1,7 @@
 {
-  "name": "鹏鹏的第二大脑 · 认知与项目工作台",
+  "name": "第二大脑 · 认知与项目工作台",
   "short_name": "第二大脑",
-  "description": "18张领域主题卡、独立项目复盘、极速出工SOP与客户预设、2026年度高光榜单",
+  "description": "领域主题卡、独立项目复盘、出工SOP与预设、年度工作台",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#F7F5F0",
