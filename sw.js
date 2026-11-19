@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pengpeng-brain-v1';
+const CACHE_NAME = 'pengpeng-brain-v2';
 const ASSETS = ['./', './index.html', './manifest.json', './icon.svg'];
 
 self.addEventListener('install', (e) => {
@@ -7,7 +7,11 @@ self.addEventListener('install', (e) => {
 });
 
 self.addEventListener('activate', (e) => {
-  e.waitUntil(self.clients.claim());
+  e.waitUntil(
+    caches.keys().then((keys) =>
+      Promise.all(keys.filter((k) => k !== CACHE_NAME).map((k) => caches.delete(k)))
+    ).then(() => self.clients.claim())
+  );
 });
 
 // Network-first: 有网拿最新巡检内容，地下室/片场断网秒切离线缓存
